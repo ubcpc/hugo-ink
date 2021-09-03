@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
   var toggle = document.getElementById("scheme-toggle");
+  var avatar = document.getElementById("avatar");
 
   var scheme = "light";
   var savedScheme = localStorage.getItem("scheme");
@@ -16,30 +17,32 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 
   if(scheme == "dark") {
-    darkscheme(toggle, container);
+    darkscheme(toggle, container, avatar);
   } else {
-    lightscheme(toggle, container);
+    lightscheme(toggle, container, avatar);
   }
 
   toggle.addEventListener("click", () => {
     if (toggle.className === "light") {
-      darkscheme(toggle, container);
+      darkscheme(toggle, container, avatar);
     } else if (toggle.className === "dark") {
-      lightscheme(toggle, container);
+      lightscheme(toggle, container, avatar);
     }
   });
 });
 
-function darkscheme(toggle, container) {
+function darkscheme(toggle, container, avatar) {
   localStorage.setItem("scheme", "dark");
   toggle.innerHTML = feather.icons.sun.toSvg();
   toggle.className = "dark";
   container.className = "dark";
+  avatar.src = "/logo-white.png";
 }
 
-function lightscheme(toggle, container) {
+function lightscheme(toggle, container, avatar) {
   localStorage.setItem("scheme", "light");
   toggle.innerHTML = feather.icons.moon.toSvg();
   toggle.className = "light";
   container.className = "";
+  avatar.src = "/logo-main.png";
 }

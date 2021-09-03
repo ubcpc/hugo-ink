@@ -8,6 +8,10 @@ body {
     font-size: 17px;
 }
 
+p:lang(fa), h1:lang(fa), a:lang(fa) {
+    font-family: 'Vazir';
+}
+
 a {
     color: #3700ff;
     text-decoration: none;
@@ -44,8 +48,8 @@ hr {
 
 img {
     margin: 10px auto 10px auto;
-    max-width: 100%;
     display: block;
+    max-width: 100%;
 }
 
 a img {
@@ -222,6 +226,16 @@ ul {
     margin-top: 30px;
 }
 
+.my-container {
+    overflow: auto;
+    display: flex;
+    align-items: flex-end;
+}
+
+.my-container-title {
+    flex-grow: 1;
+}
+
 .header {
     margin-bottom: 20px;
     padding-bottom: 20px;
@@ -232,10 +246,11 @@ ul {
     margin: 0 20px 0 0;
 }
 .header .avatar img {
-    width: 64px;
-    height: 64px;
-    overflow: hidden;
+    width: 96px;
+    height: 96px;
+    /* overflow: hidden; */
     border-radius: 100%;
+    min-width: 100%;
 }
 .header .site-title {
     margin: 0;
@@ -251,6 +266,7 @@ ul {
 .header .site-description {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
     .header .site-description p {
         margin: 0 0 10px 0;
